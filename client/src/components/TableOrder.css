@@ -1,0 +1,61 @@
+.orders {
+    border: 3px solid #f3f3f3;
+    margin-right: 78px;
+    margin-left: 60px;
+}
+.ordersHeader {
+    padding: 15px 15px 0 15px;
+}
+
+.orders h5 {
+    color: #01a1dd;
+    font-size: 16px;
+    padding: 0;
+}
+
+.gap{
+    margin-left: 22px;
+    margin-right: 22px;
+    border: 1px solid #f3f3f3;
+}
+
+thead td{
+    font-weight: bold;
+}
+
+.word-wrap {
+    word-break: break-all;
+// word-wrap: break-word;
+// overflow-wrap: break-word;
+}
+
+.bluehr{
+    border-top: 3px solid #01a1dd;
+}
+
+.sortIcon {
+    -webkit-transform: scaleX(-1);
+    padding-right: 15px;
+    font-size: 29px;
+    height: 17px;
+    color: grey;
+    margin-left: -7%;
+    margin-bottom: -3%;
+    cursor: pointer;
+}
+
+.priority {
+    display: inline;
+    color: #9e9e9e;
+    margin-left: 2%;
+}
+
+.orderNum, .viewOrder {
+    color: #01a1dd;
+    cursor: pointer;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+td { white-space:pre }

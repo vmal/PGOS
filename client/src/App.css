@@ -11,4 +11,17 @@
   align-items: center;
   margin: 25px 0;
 }
+.heading{
+  font-weight: 300;
+  margin-left: 5%;
+  text-align: left;
+}
+
+.font{
+  font-weight: 400;
+}
+.fontP{
+  font-weight: 200;
+}
+
 
