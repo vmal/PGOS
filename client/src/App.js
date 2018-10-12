@@ -44,7 +44,7 @@ class App extends Component {
             <Modal open={open} onClose={this.onCloseModal} center>
                 <ModalOrder/>
             </Modal>
-
+0
         </div>
     );
   }

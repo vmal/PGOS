@@ -1,6 +1,9 @@
 const mongoose = require('mongoose');
 
 const workOrderSchema = mongoose.Schema({
+    orderId: {
+        type: String
+    },
     coffeeName: {
         type: String
     },

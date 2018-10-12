@@ -61,3 +61,15 @@
 label{
     margin-top: 10%;
 }
+
+.notes{
+    margin-right: 10%;
+}
+.textbox{
+    width: 210%;
+}
+.priority{
+    margin-left: 4%;
+    color: #1d1d1d
+;
+}
