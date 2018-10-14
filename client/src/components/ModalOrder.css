@@ -68,8 +68,20 @@ label{
 .textbox{
     width: 210%;
 }
-.priority{
+.priorityCheck{
     margin-left: 4%;
     color: #1d1d1d
 ;
 }
+
+.adjLabel{
+    padding-top: 2.5%;
+}
+
+input[type=date]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    display: none;
+}
+
+
+

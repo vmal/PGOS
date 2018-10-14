@@ -9,9 +9,10 @@ class CreateOrderButton extends Component{
     }
     render(){
         let buttonName = this.props.buttonName;
+        console.log(this.props.isView);
         return(
             <div>
-                <button onClick={this.props.onClick} name="button" type="submit"
+                <button disabled={this.props.isView} onClick={this.props.onClick} name="button" type="submit"
                         className="btn btn-primary createOrder">
                     {buttonName}
                 </button>

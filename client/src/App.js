@@ -14,8 +14,11 @@ class App extends Component {
         super();
         this.onCloseModal = this.onCloseModal.bind(this);
         this.onOpenModal = this.onOpenModal.bind(this);
+        this.handleOpenModal = this.handleOpenModal.bind(this);
         this.state = {
-            open: false
+            open: false,
+            isView: false,
+            json: {}
         };
     }
 
@@ -24,7 +27,21 @@ class App extends Component {
     }
 
     onCloseModal() {
-        this.setState({ open: false });
+        this.setState({
+            open: false,
+            isView: false,
+            json:{}
+        });
+    }
+
+    handleOpenModal(json){
+        //console.log('json: ',json);
+        this.setState({
+            isView: true,
+            json: json
+        });
+        this.onOpenModal();
+
     }
 
   render() {
@@ -40,11 +57,10 @@ class App extends Component {
                 <div className="col-sm-2"><CreateOrderButton onClick={this.onOpenModal.bind(this)} buttonName="CREATE ORDER"/></div>
 
             </div>
-            <TableOrder/>
+            <TableOrder handlerFromParent={this.handleOpenModal}/>
             <Modal open={open} onClose={this.onCloseModal} center>
-                <ModalOrder/>
+                <ModalOrder isView={this.state.isView} sendJson={this.state.json}/>
             </Modal>
-0
         </div>
     );
   }

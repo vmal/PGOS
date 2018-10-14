@@ -3,17 +3,17 @@ const router = express.Router();
 const WorkOrder = require('../models/workOrders');
 /* GET home page. */
 router.post('/createorder',(req, res) =>{
-    console.log('in');
-    let coffeeName = req.body.coffeeName;
-    let brewMethod = req.body.brewMethod;
-    let shipDate = req.body.shipDate;
-    let numberOfCases = req.body.numberOfCases;
-    let priority = req.body.priority;
-    let packetsPerCase = req.body.packetsPerCase;
-    let notes = req.body.notes;
+    console.log('in: ',req.body);
+    let data = req.body.data;
+    let coffeeName = data.coffeeName;
+    let brewMethod = data.brewMethod;
+    let shipDate = data.shipDate;
+    let numberOfCases = data.numberOfCases;
+    let priority = data.priority;
+    let packetsPerCase = data.packetsPerCase;
+    let notes = data.notes;
     let orderId = '#'+Math.floor(1000 + Math.random() * 9000);
-
-    console.log(shipDate);
+    console.log("#########################",shipDate);
     let newOrder = new WorkOrder({
         orderId: orderId,
         coffeeName: coffeeName,
@@ -35,8 +35,8 @@ router.post('/createorder',(req, res) =>{
 
 
 router.get('/getAllOrders',(req,res)=>{
-    WorkOrder.find({}).sort({shipDate: 1, priorty: 1}).exec((err,docs)=>{
-        console.log(docs);
+    WorkOrder.find({}).sort([['shipDate', 1], ['priority', -1]]).exec((err,docs)=>{
+        //console.log(docs);
         res.send(JSON.stringify(docs));
     });
 
