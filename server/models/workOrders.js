@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
-
+/*
+A schema for storing the orders in the Database
+ */
 const workOrderSchema = mongoose.Schema({
     orderId: {
         type: String
