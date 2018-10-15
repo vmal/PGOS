@@ -5,6 +5,7 @@ This application was created by using React JS for frontend, Node JS with Expres
 and MongoDB for Database. The following subtopics describe the architecture of this web application in detail.
 
 <h3>FrontEnd </h3>
+
 1. The React JS Application is made up of multiple reusable components. 
 
 2. The root component is composed of multiple child components to render the whole Application.
@@ -18,6 +19,7 @@ and MongoDB for Database. The following subtopics describe the architecture of t
 6. The users also has the ability to view the order in detail by clicking the view button.
 
 <h3>Backend</h3> 
+
 1. The server is running on Node JS library using the Express Framework.
 
 2. There are two REST API EndPoints for (POST) creating an order or (GET) getting all orders.
@@ -28,6 +30,7 @@ and MongoDB for Database. The following subtopics describe the architecture of t
 
 
 <h3>Database</h3>
+
 1. The database is running on MongoDB which is deployed on MLAB.
 
 2. There is only one Model for this application.
