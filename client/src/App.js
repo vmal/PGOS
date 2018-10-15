@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
-import Modal from "react-responsive-modal";
 
+import Modal from "react-responsive-modal";
 import CurrentDate from './components/CurrentDate';
 import CreateOrderButton from './components/CreateOrderButton';
 import TableOrder from './components/TableOrder';
 import ModalOrder from "./components/ModalOrder";
 
+/*
+This is the root component which renders all children component.
+ */
 class App extends Component {
 
     constructor()
@@ -21,11 +24,11 @@ class App extends Component {
             json: {}
         };
     }
-
+    //Open Modal
     onOpenModal() {
         this.setState({ open: true });
     }
-
+    //Close Modal
     onCloseModal() {
         this.setState({
             open: false,
@@ -33,9 +36,8 @@ class App extends Component {
             json:{}
         });
     }
-
+    //Opens the Modal in Read Only Mode
     handleOpenModal(json){
-        //console.log('json: ',json);
         this.setState({
             isView: true,
             json: json

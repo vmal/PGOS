@@ -4,14 +4,15 @@ import 'react-datepicker/dist/react-datepicker.css';
 import CreateOrderButton from "./CreateOrderButton";
 import axios from "axios";
 import moment from "moment";
-
+/*
+This Component deals with rendering a Modal view for either creating an order or view an order.
+ */
 class ModalOrder extends Component{
     constructor(props)
     {
-        let obj;
         super(props);
         this.state = {
-            shipDate: obj,
+            shipDate: {},
             coffeeName: "",
             brewMethod: "",
             numberOfCases: "",
@@ -27,6 +28,7 @@ class ModalOrder extends Component{
 
     }
 
+    // This handles the state change when the user is typing in the input box.
     handleInputChange(event){
         const target = event.target;
         const value = target.type === 'checkbox' ? target.checked : target.value;
@@ -36,12 +38,15 @@ class ModalOrder extends Component{
             [name]: value
         });
     }
+
+    //This handles the shipping date selected by the users
     handleDateChange = (e) => {
         this.setState({
             shipDate: e.target.value
         });
     };
 
+    //Sends a post request to the server to create a new order.
     createNewOrder() {
         let data = {
             coffeeName: this.state.coffeeName,
@@ -66,10 +71,11 @@ class ModalOrder extends Component{
 
     }
 
+    //This function is called when the modal is opened in Read only mode.
     renderView(isView,json){
         this.setState({
             isView: isView,
-            shipDate: moment(json.shipDate),
+            shipDate: moment(json.shipDate).format("YYYY-MM-DD"),
             coffeeName: json.coffeeName,
             brewMethod: json.brewMethod,
             numberOfCases: json.numberOfCases,
@@ -78,19 +84,19 @@ class ModalOrder extends Component{
             priority: json.priority
         })
     }
+
+    //Decides whether the Modal is to opened in View only mode or not.
     componentDidMount()
     {
         let isView = this.props.isView;
         let json = this.props.sendJson;
-        console.log("isView: ",isView);
-        console.log("sendJson: ",json);
+
         if(isView)
             this.renderView(isView,json);
     }
 
     render(){
 
-        //console.log(this.state);
         return(
             <div>
                 <div className="col-12"><h3 className="font">Perfectly Ground Work Orders</h3></div>
@@ -120,7 +126,7 @@ class ModalOrder extends Component{
                         <div className="form-group col-md-6">
                             <label htmlFor="shipDate">Ship Date<p className="required">*</p></label>
                             <div className='input-group date' id='datetimepicker2'>
-                                <input type="date" className="form-control" disabled={this.state.isView} required selected={this.state.shipDate} onChange={this.handleDateChange.bind(this)}  id="shipDate"/>
+                                <input type="date" className="form-control" value={this.state.shipDate} disabled={this.state.isView} required selected={this.state.shipDate} onChange={this.handleDateChange.bind(this)}  id="shipDate"/>
                                 <span className="input-group-addon">
                                     <span className="glyphicon glyphicon-calendar"/>
                                 </span>

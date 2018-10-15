@@ -4,7 +4,9 @@ import moment from 'moment';
 import { FaSortAmountDown, FaEye } from "react-icons/fa";
 import Pagination from "react-js-pagination";
 import axios from 'axios';
-
+/*
+This component renders the table contents by fetching all the orders from the server and rendering them in the root view.
+ */
 class TableOrder extends Component{
     constructor()
     {
@@ -19,6 +21,7 @@ class TableOrder extends Component{
         };
     }
 
+    //Loops through all the list and renders all the orders.
     renderList(json){
         let startIndex = (this.state.activePage - 1) * 25;
         let endIndex = this.state.activePage * 25;
@@ -40,10 +43,13 @@ class TableOrder extends Component{
         return allOrders;
     }
 
+    //function for handling the view only modal
     viewOrder(json){
         console.log(json);
         this.props.handlerFromParent(json);
     }
+
+    //As the component is mounted, the first thing this component does is to get all the orders from the server.
     fetchFirst() {
         let that = this;
         axios.get('http://localhost:4000/workorder/getAllOrders')
@@ -70,10 +76,12 @@ class TableOrder extends Component{
                 console.log(error);
             });
     }
+
     componentDidMount() {
         this.fetchFirst();
     }
 
+    //this function handles the pagination part of the all the orders.
     handlePageChange(pageNumber) {
         console.log(`active page is ${pageNumber}`);
         this.setState({activePage: pageNumber});

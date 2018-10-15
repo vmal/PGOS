@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import moment from 'moment';
 import './CurrentDate.css'
+
+/*
+This component gets the current date using the Moment JS library and then displays it in the heading of the page.
+ */
 class CurrentDate extends Component{
 
     constructor()

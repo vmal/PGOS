@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import './CreateOrderButton.css'
+
+/*
+This is a Button Component which can be used for Submitting Order or Opening a Modal.
+ */
 class CreateOrderButton extends Component{
-    constructor()
-    {
-        super();
-        this.state = {
-        };
-    }
+
     render(){
         let buttonName = this.props.buttonName;
         console.log(this.props.isView);
