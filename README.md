@@ -6,23 +6,36 @@ and MongoDB for Database. The following subtopics describe the architecture of t
 
 <h3>FrontEnd </h3>
 1. The React JS Application is made up of multiple reusable components. 
+
 2. The root component is composed of multiple child components to render the whole Application.
+
 3. There are different components like Button, TableView, Modal, etc.
+
 4. As soon as the application loads, it gets all the orders from the server in JSON format and renders it in a table view format.
+
 5. The user can also post a JSON request to the server to create a new order.
+
 6. The users also has the ability to view the order in detail by clicking the view button.
 
 <h3>Backend</h3> 
 1. The server is running on Node JS library using the Express Framework.
+
 2. There are two REST API EndPoints for (POST) creating an order or (GET) getting all orders.
+
 3. For creating an order, a JSON is sent to the first endpoint which in turn parses it and saves it in the database.
+
 4. The getting all the orders, the server queries the database, then sorts it according to the shipping date and priority in ascending order and sends it back in a JSON format.
+
 
 <h3>Database</h3>
 1. The database is running on MongoDB which is deployed on MLAB.
+
 2. There is only one Model for this application.
+
 3. The schema was defined by using mongoose.
+
 4. The schema for the database is defined in the following format:
+
 
 `    orderId: {
          type: String
@@ -48,9 +61,12 @@ and MongoDB for Database. The following subtopics describe the architecture of t
      notes: {
          type: String
      }`
+     
 <h2>Trade OFFs</h2>
  I had two options to build this project.
+ 
 1. Build a server with Node JS and serve React JS application as Static files.
+
 2. Create the React JS and Node JS application separately using `Create React App` and `npm install express-generator -g`.
 
 I chose option 2 because its the fastest way to rapidly prototype an application. All the dependencies and boilerplate are pre installed for you
