@@ -62,15 +62,23 @@ Also with option 2, I had to deal with CORS and the best way to deal with that w
 <h2>Run the project</h2>
 <strong>Prerequisite: Make sure that you have Node JS with NPM installed in your system.
  </strong>
-<br>
+ 
 The following steps will let you download and run the project locally: 
+
 1. Open up a terminal and clone the repository using  `git clone https://github.com/vmal/PGOS.git`.
+
 2. `cd` into the cloned dir and `cd` again into Client Directory.
-3. Type `npm install` to install all the dependencies and then `npm start` to run the Client Server. Your default browser should open up with the client running at `locahost:3000`
+
+3. Type `npm install` to install all the dependencies and then `npm start` to run the Client Server. Your default browser should open up with the client running at `locahost:3000`.
+
 4. Open another instance of terminal and this time `cd` into Server Directory.
+
 5. Type `npm install` to install all the dependencies and then `node app.js`.
+
 6. Your server will be running on port `4000`.
+
 7. Since the database is already deployed on cloud in Mlab, you will not have to worry about it.
+
 7. You can now successfully interact with the application!
 
 <h2>Deployment And Production Readiness</h2>
