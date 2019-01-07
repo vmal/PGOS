@@ -1,4 +1,9 @@
 <h1>PGOS - [Perfectly Ground Ordering System]</h1>
+
+<h2>Demo</h2>
+
+The demo for this app can be accessed <a href="https://pgos-frontend.herokuapp.com/">here</a>
+
 <h2>Architecture</h2>
 
 This application was created by using React JS for frontend, Node JS with Express JS framework for Backend 
